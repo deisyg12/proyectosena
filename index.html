@@ -3,69 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análisis y Desarrollo de Software</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Conversor de Monedas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://cdn.pixabay.com/photo/2023/09/16/18/18/wallpaper-8257343_640.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #107d15;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        footer {
+            background-color: #107d15;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: auto;
+        }
+        .converter {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            margin: 20px auto;
+        }
+
+        #amount{
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input, select, button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        h2, h3 {
+            text-align: center;
+        }
+
+        .ads {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            margin: 20px auto;
+            width: 480px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .ads p {
+            font-size: 14px;
+            color: #333;
+        }
+        .ads a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .ads a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <div class="container">
-            <h1>Análisis y Desarrollo de Software</h1>
-            <p>Domina las habilidades esenciales para convertirte en un desarrollador de software profesional</p>
-            <a href="#inscripcion" class="btn-primary">Inscríbete Ahora</a>
-        </div>
+        <h1>Conversor de Monedas Online Gratis</h1>
     </header>
 
-    <section class="features">
-        <div class="container">
-            <h2>¿Qué aprenderás?</h2>
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <h3>Análisis de Requisitos</h3>
-                    <p>Aprenderás a identificar y documentar las necesidades del cliente para desarrollar soluciones de software efectivas.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Diseño de Sistemas</h3>
-                    <p>Conoce los principios del diseño de software, desde la arquitectura hasta la interfaz de usuario.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Desarrollo de Aplicaciones</h3>
-                    <p>Domina los lenguajes de programación más utilizados para crear aplicaciones robustas y escalables.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Pruebas y Mantenimiento</h3>
-                    <p>Aprenderás a asegurar la calidad del software mediante pruebas exhaustivas y técnicas de mantenimiento.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="converter">
+        <h2>Conversor de Monedas</h2>
+        <input type="number" id="amount" placeholder="Cantidad">
+        <select id="fromCurrency">
+            <!-- Monedas de ejemplo -->
+            <option value="EUR">Euro (EUR)</option>
+        </select>
+        <select id="toCurrency">
+            <option value="USD">Dólar estadounidense (USD)</option>
+            <option value="EUR">Euro (EUR)</option>
+            <option value="COP">Peso colombiano (COP)</option>
+            <option value="MXN">Peso mexicano (MXN)</option>
+        </select>
+        <button onclick="convertCurrency()">Convertir</button>
+        <h3 id="result"></h3>
+    </div>
 
-    <section class="testimonials">
-        <div class="container">
-            <h2>Testimonios</h2>
-            <div class="testimonial-item">
-                <p>"Este curso me brindó las herramientas necesarias para iniciar mi carrera como desarrollador de software. Altamente recomendado!"</p>
-                <h4>Juan Pérez</h4>
-            </div>
-            <div class="testimonial-item">
-                <p>"Los instructores son expertos en la materia y el contenido es muy completo. ¡Una excelente inversión en mi futuro!"</p>
-                <h4>María García</h4>
-            </div>
-        </div>
-    </section>
-
-    <section id="inscripcion" class="signup">
-        <div class="container">
-            <h2>¡Reserva tu lugar hoy!</h2>
-            <p>No pierdas la oportunidad de ser parte de este curso. Inscríbete ahora y comienza tu camino hacia una carrera exitosa en desarrollo de software.</p>
-            <a href="#" class="btn-primary">Inscríbete Aquí</a>
-        </div>
-    </section>
+    <div class="ads">
+        <p>Anuncio: ¿Necesitas más información sobre tasas de cambio? Visita nuestra <a href="#">guía de conversión de monedas</a> para aprender más sobre las últimas tasas de cambio.</p>
+    </div>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Curso Análisis y Desarrollo de Software. Todos los derechos reservados.</p>
-        </div>
+        <p>&copy; 2024 Conversor de Monedas - Todos los derechos reservados</p>
     </footer>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
+
 
